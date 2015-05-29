@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="fr">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Cartographie avec SPIP</title>
+
+		<meta name="description" content="Développement avec la librairie Leaflet et dérive sur les fonds de cartes du plugin GIS">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Cartographie avec SPIP</h1>
+					<h2>Bruno Bergot</h2>
+					<p>
+						<small>b_b@spip - brunob@github - bruno@eliaz.fr</small>
+					</p>
+				</section>
+
+				<section data-background="img/spip.png" data-background-size="400px">
+					
+				</section>
+				
+				<section>
+					<h2>SPIP</h2>
+					<ul>
+						<li class="fragment">Système de publication pour l’Internet</li>
+						<li class="fragment">Fonctionnement collectif</li>
+						<li class="fragment">Multilinguisme</li>
+						<li class="fragment">Distribué sous la licence GNU/GPL</li>
+						<li class="fragment">Né en 2001, utilisé sur plus de 40 000 sites</li>
+					</ul>
+					<p><small><a href="http://www.spip.net/">http://www.spip.net/</a></small></p>
+				</section>
+				
+				<section data-background="img/gis.png" data-background-size="70px">
+					
+				</section>
+				
+				<section>
+					<h2>GIS</h2>
+					<ul>
+						<li class="fragment">Un plugin pour SPIP</li>
+						<li class="fragment">
+							Développé sur l'espace collaboratif (la zone)
+							<ul>
+								<li class="fragment">À ce jour, 725 commits sur le projet</li>
+								<li class="fragment">Effectués par plus de 40 personnes</li>
+							</ul>
+						</li>
+						<li class="fragment">Distribué sous la licence GNU/GPL</li>
+						<li class="fragment">Né en 2007, utilisé sur environ 2 700 sites</li>
+					</ul>
+					<p><small><a href="http://plugins.spip.net/gis.html">http://plugins.spip.net/gis.html</a></small></p>
+				</section>
+				
+				<section>
+					<h2>Historique</h2>
+				</section>
+				
+				<section>
+					<h2>GIS 1.0 (2007)</h2>
+					<ul>
+						<li class="fragment">Développé par Berio et Horacio du projet <a href="http://www.escoitar.org/">escoitar.org</a></li>
+						<li class="fragment">Maintenu par b_b et kent1</li>
+						<li class="fragment">Utilise l'API Google Maps v2 ou OpenLayers</li>
+						<li class="fragment">Permet de géolocaliser les articles de SPIP</li>
+						<li class="fragment">Superposition de fichiers KML</li>
+						<li class="fragment">Geocoding + Reverse Geocoding</li>
+					</ul>
+					<p><small><a href="http://contrib.spip.net/Plugin-Gis-escoitar">http://contrib.spip.net/Plugin-Gis-escoitar</a></small></p>
+				</section>
+				
+				<section>
+					<h2>GIS 2.0 et 3.0 (2011)</h2>
+					<ul>
+						<li class="fragment">Développé par b_b et kent1</li>
+						<li class="fragment">Utilise l'API <a href="http://mapstraction.com/">Mapstraction</a></li>
+						<li class="fragment">Permet de géolocaliser tous les objets de SPIP</li>
+						<li class="fragment">Chaque point dispose d'un titre, un descriptif et un logo personnalisable</li>
+						<li class="fragment">Un point peut être lié à plusieurs objets</li>
+					</ul>
+					<p><small><a href="http://contrib.spip.net/GIS-2-GIS-3">http://contrib.spip.net/GIS-2-GIS-3</a></small></p>
+				</section>
+				
+				<section>
+					<h2>GIS 4.0 (2012)</h2>
+					<ul>
+						<li class="fragment">Développé par b_b et kent1</li>
+						<li class="fragment">Utilise l'API <a href="http://leafletjs.com/">Leaflet</a></li>
+						<li class="fragment">Encore plus modulaire : utilsiation de <a href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/gis/trunk/lib/leaflet/README.md">librairies externes</a></li>
+						<li class="fragment">Ne nécessite plus de scripts externes</li>
+						<li class="fragment">Plus de 25 fonds de carte différents (la plupart basés sur les données OSM)</li>
+						<li class="fragment">Le geocoder utilise Nominatim</li>
+						<li class="fragment">Superposition de fichiers GPX et GeoJSON</li>
+						<li class="fragment">Nouvelles fonctionnalités : clustering, plein écran, etc.</li>
+					</ul>
+					<p><small><a href="http://contrib.spip.net/GIS-4">http://contrib.spip.net/GIS-4</a></small></p>
+				</section>
+				
+				<section>
+					<p>Et comme très souvent chez SPIP...<br>la compatibilité ascendante est assurée :)</p>
+				</section>
+				
+				<section>
+					<h2>Pour les rédacteurs</h2>
+				</section>
+				
+				<section>
+					<p>Localisation des objets depuis l'interface privé de SPIP.</p>
+					<img src="img/gis_prive.png">
+				</section>
+				
+				<section>
+					<p>Pour chaque objet, on peut :</h2>
+					<ul>
+						<li class="fragment">gérer la liste des points liés à l'objet en cours</li>
+						<li class="fragment">recherhcer un point existant pour le lier à l'objet</li>
+						<li class="fragment">créer un nouveau point et le lier à l'objet</li>
+					</ul>
+				</section>
+				
+				<section>
+					<p>Insérer une carte dans le texte d'une page :</p>
+					<img src="img/modele.png">
+					<p><small><a href="http://contrib.spip.net/GIS-4#params">Voir la liste des paramètres du modèle</a></small></p>
+				</section>
+
+				<section>
+					<h2>Pour les développeurs</h2>
+				</section>
+
+				<section>
+					<p>Insérer une carte dans un squelette :</p>
+					<pre><code data-trim>
+[(#INCLURE{fond=modeles/carte_gis,
+	zoom=8,
+	limit=100,
+	scale=oui})]
+					</code></pre>
+				</section>
+				
+				<section>
+					<p>Autre exemple :</p>
+					<pre><code data-trim>
+[(#INCLURE{fond=modeles/carte_gis,
+	objets=articles,
+	id_rubrique=2,
+	zoom=7,
+	lat=48.21437896,
+	lon=-4.54370498,
+	kml=2})]
+					</code></pre>
+					<ul>
+						<li class="fragment">afficher les articles</li>
+						<li class="fragment">de la rubrique n°2</li>
+						<li class="fragment">définir le zoom de la carte à 7</li>
+						<li class="fragment">centrer la carte sur les coordonnées 48.21437896 / -4.54370498</li>
+						<li class="fragment">superposer le KML correspondant au document n°2</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Boucles et balises</h2>
+					<p class="fragment">Dans une boucle GIS :</p>
+					<ul>
+						<li class="fragment">on peut utiliser les balises :
+						<pre><code>#ID_GIS #TITRE #DESCRIPTIF #LAT #LON #ZOOM</code></pre>
+						</li>
+						<li class="fragment">si le geocoder est actif :
+						<pre><code>#ADRESSE, #PAYS, #CODE_PAYS, #REGION, #VILLE, #CODE_POSTAL</code></pre>
+						</li>
+						<li class="fragment">et des critères :
+						<pre><code>{gis} {gis distance} {distancefrom}</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Un peu de technique ?</h2>
+					<ul>
+						<li class="fragment">chaque carte est alimentée par <a href="http://labo.eliaz.fr/spip.php?page=gis_json&id_article=107&limit=500">un fichier GeoJSON</a></li>
+						<li class="fragment">possible de définir <a href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/gis/trunk/json/gis_evenements.html">un fichier GeoJSON par type d'objet</a></li>
+						<li class="fragment">les fichiers GeoJSON sont des squelettes personnalisables</li>
+						<li class="fragment">l'icône utilisée par défaut peut être personnalisée</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Performances & maintenabilité</h2>
+					<ul>
+						<li class="fragment">les scripts nécessaires ne sont appelés que lorsqu'une carte est présente dans la page (<a href="http://zone.spip.org/trac/spip-zone/changeset/64796/">source</a>)</li>
+						<li class="fragment">la plupart des fonctionnalités reposent sur des <a href="http://zone.spip.org/trac/spip-zone/browser/_plugins_/gis/trunk/lib/leaflet/README.md">librairies externes</a></li>
+						<li class="fragment">le plugin utilise <a href="http://zone.spip.org/trac/spip-zone/changeset/82811/">L.Map.Gis</a> qui étend L.Map de Leaflet</li>
+					</ul>
+				</section>
+				
+				<section>
+					<p>Les points c'est bien, mais il n'y a pas que ça dans la vie...</p>
+				</section>
+				
+				<section>
+					<h2>GIS Geometries</h2>
+					<ul>
+						<li class="fragment">une extension du plugin GIS</li>
+						<li class="fragment">ajoute la possibilité d’afficher et d’éditer des formes géométriques (polyline, polygon)</li>
+						<li class="fragment">création d'objets par tracé ou par import de fichiers (GPX/KML)</li>
+						<li class="fragment">utilise les librairies <a href="https://github.com/Leaflet/Leaflet.draw">Leaflet Draw</a> et <a href="https://github.com/phayes/geoPHP/">geoPHP</a></li>
+					</ul>
+					<p class="fragment"><small>Compatible MySQL 4.1 mini, pas de support SQLite pour l'instant.</small></p>
+				</section>
+				
+				<section>
+					<p>Enrichit le formulaire d'édition de GIS.</p>
+				</section>
+				
+				<section>
+					<img src="img/gisgeom_prive.png">
+				</section>
+				
+				<section>
+					<img src="img/gisgeom_edit.png">
+				</section>
+				
+				<section>
+					<p>Ajoute la possibilité de télécharger les objets<br>au format GPX/KML.</p>
+				</section>
+				
+				<section>
+					<img src="img/gisgeom_export.png">
+				</section>
+
+				<section>
+					<h2>Exemples d'utilisation</h2>
+					<ul>
+						<li class="fragment"><a href="http://www.geodiversite.net/spip.php?page=carte">Géodiversité</a> & <a href="http://www.lestaxinomes.org/spip.php?page=carte">Les Taxinomes</a></li>
+						<li class="fragment"><a href="http://www.vertlejardin.fr/spip.php?rubrique34">Vert le Jardin</a></li>
+						<li class="fragment"><a href="http://www.cae22.coop/-trouvez-un-entrepreneur-salarie-?type=carte">CAE 22</a></li>
+						<li class="fragment"><a href="http://vuedemafenetre.diplomatie.gouv.fr/">Vu(e) de ma fenêtre</a></li>
+						<li class="fragment"><a href="http://www.blavet.bzh/spip.php?page=tourisme">Syndicat de la vallée du Blavet</a></li>
+						<li class="fragment">et plein d'autres...</li>
+					</ul>
+				</section>
+
+				<section>
+					<p>Des questions ?</p>
+				</section>
+				
+				<section>
+					<p>Merci :)</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
