@@ -1,7 +1,7 @@
 Cartographie avec SPIP
 ==================================
 
-Slides pour l'atlier Cartographie avec SPIP du SOTM 2015 à Brest
+Slides pour l'atelier Cartographie avec SPIP du SOTM 2015 à Brest
 
 https://wiki.openstreetmap.org/wiki/FR:State_of_the_Map_France_2015
 
